@@ -1,9 +1,6 @@
 package org.lucamusumeci.sfgdi;
 
-import org.lucamusumeci.sfgdi.controller.ConstructorInjectedController;
-import org.lucamusumeci.sfgdi.controller.I18nController;
-import org.lucamusumeci.sfgdi.controller.PropertyInjectedController;
-import org.lucamusumeci.sfgdi.controller.SetterInjectedController;
+import org.lucamusumeci.sfgdi.controller.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -21,9 +18,12 @@ public class SfgDiApplication {
 		System.out.println("By Setter: " + setterInjectedController.getGreeting());
 
 		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) context.getBean("constructorInjectedController");
-		System.out.println("By Contructor: " + constructorInjectedController.getGreeting());
+		System.out.println("By Constructor: " + constructorInjectedController.getGreeting());
 
 		I18nController i18nController = (I18nController) context.getBean("InternationalizationController");
 		System.out.println("I18n: " + i18nController.getGreeting());
+
+		ConfigController configController = (ConfigController) context.getBean("configController");
+		System.out.println("Config: " + configController.sayHello());
 	}
 }
