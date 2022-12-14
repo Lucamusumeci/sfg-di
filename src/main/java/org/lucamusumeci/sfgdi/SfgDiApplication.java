@@ -25,5 +25,8 @@ public class SfgDiApplication {
 
 		ConfigController configController = (ConfigController) context.getBean("configController");
 		System.out.println("Config: " + configController.sayHello());
+
+		XMLController xmlController = (XMLController) context.getBean("xmlController");
+		System.out.println("XML: " + xmlController.sayHello());
 	}
 }

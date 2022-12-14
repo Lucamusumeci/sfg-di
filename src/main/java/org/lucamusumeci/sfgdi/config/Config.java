@@ -5,8 +5,10 @@ import org.lucamusumeci.sfgdi.service.GreetingServiceConfig;
 import org.lucamusumeci.sfgdi.service.GreetingServiceFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.Profile;
 
+@ImportResource("classpath:sfgdi-config.xml")
 @Configuration
 public class Config {
 
