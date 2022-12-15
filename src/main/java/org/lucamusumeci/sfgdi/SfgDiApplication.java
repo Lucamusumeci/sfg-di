@@ -2,10 +2,13 @@ package org.lucamusumeci.sfgdi;
 
 import org.lucamusumeci.sfgdi.controller.*;
 import org.lucamusumeci.sfgdi.datasource.FakeDataSource;
+import org.lucamusumeci.sfgdi.datasource.FakeDataSourceWithConstructorBinding;
+import org.lucamusumeci.sfgdi.datasource.FakeDataSourceWithPropertyBinding;
 import org.lucamusumeci.sfgdi.service.PrototypeBean;
 import org.lucamusumeci.sfgdi.service.SingletonBean;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
@@ -46,6 +49,13 @@ public class SfgDiApplication {
 
 		FakeDataSource fakeDataSource = (FakeDataSource) context.getBean("fakeDataSource");
 		System.out.println(fakeDataSource.toString());
+
+		FakeDataSourceWithPropertyBinding fakeDataSourceWithPropertyBinding = (FakeDataSourceWithPropertyBinding) context.getBean("fakeDataSourceWithPropertyBinding");
+		System.out.println(fakeDataSourceWithPropertyBinding.toString());
+
+		FakeDataSourceWithConstructorBinding fakeDataSourceWithConstructorBinding = context.getBean(FakeDataSourceWithConstructorBinding.class);	//You can use class as well
+		System.out.println(fakeDataSourceWithConstructorBinding.toString());
+
 
 	}
 }
