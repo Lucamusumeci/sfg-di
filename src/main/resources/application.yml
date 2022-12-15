@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: default
+    active: default, en
 datasourcetest:
   username: Billy
   password: Password.123
