@@ -4,4 +4,5 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean name="serviceDefinedViaXML" class="org.lucamusumeci.sfgdi.service.GreetingServiceXML"/>
+    <bean name="prototypeBean" class="org.lucamusumeci.sfgdi.service.PrototypeBean" scope="prototype"/>
 </beans>

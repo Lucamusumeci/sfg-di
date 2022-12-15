@@ -1,6 +1,9 @@
 package org.lucamusumeci.sfgdi;
 
 import org.lucamusumeci.sfgdi.controller.*;
+import org.lucamusumeci.sfgdi.datasource.FakeDataSource;
+import org.lucamusumeci.sfgdi.service.PrototypeBean;
+import org.lucamusumeci.sfgdi.service.SingletonBean;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -28,5 +31,21 @@ public class SfgDiApplication {
 
 		XMLController xmlController = (XMLController) context.getBean("xmlController");
 		System.out.println("XML: " + xmlController.sayHello());
+
+		PrototypeBean prototypeBean1 = (PrototypeBean) context.getBean("prototypeBean");
+		prototypeBean1.method();
+
+		PrototypeBean prototypeBean2 = (PrototypeBean) context.getBean("prototypeBean");
+		prototypeBean2.method();
+
+		SingletonBean singletonBean1 = (SingletonBean) context.getBean("singletonBean");
+		singletonBean1.method();
+
+		SingletonBean singletonBean2 = (SingletonBean) context.getBean("singletonBean");
+		singletonBean2.method();
+
+		FakeDataSource fakeDataSource = (FakeDataSource) context.getBean("fakeDataSource");
+		System.out.println(fakeDataSource.toString());
+
 	}
 }
