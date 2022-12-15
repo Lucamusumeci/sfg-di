@@ -1,6 +1,18 @@
 spring:
   profiles:
-    active: default, en
+    active: default, it
 datasourcetest:
   username: Billy
   password: Password.123
+---
+spring:
+  profile: en
+datasourcetest:
+  username: William
+  password: PSW123
+---
+spring:
+  profile: it
+datasourcetest:
+  username: GinoPaletta
+  password: password
