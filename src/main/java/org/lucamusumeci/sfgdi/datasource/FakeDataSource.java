@@ -5,7 +5,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 //This class it to test external properties
-@PropertySource("classpath:datasourcetest.properties")
+//@PropertySource("classpath:datasourcetest.properties")    //Now we are importing them from the Spring Boot context
 @Component
 public class FakeDataSource {
 
